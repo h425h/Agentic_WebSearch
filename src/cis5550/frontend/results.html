@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerebro &mdash; results</title>
+<link rel="icon" href="cerebro-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <g stroke="var(--signal)" stroke-width="1.25" fill="none">
+          <circle cx="32" cy="32" r="22" opacity="0.25"/>
+          <circle cx="32" cy="32" r="15" opacity="0.5"/>
+          <circle cx="32" cy="32" r="8" opacity="0.85"/>
+        </g>
+        <circle cx="32" cy="32" r="2.5" fill="var(--signal)"/>
+        <g stroke="var(--signal)" stroke-width="1.25" stroke-linecap="round" opacity="0.6">
+          <line x1="32" y1="6" x2="32" y2="10"/>
+          <line x1="32" y1="54" x2="32" y2="58"/>
+          <line x1="6" y1="32" x2="10" y2="32"/>
+          <line x1="54" y1="32" x2="58" y2="32"/>
+        </g>
+      </svg>
+      <span class="wordmark">Cerebro</span>
+    </a>
+
+    <div class="search-wrap">
+      <form action="/search" method="GET">
+        <label class="search search--md" id="searchBox" for="q">
+          <svg class="icon-search" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5"/>
+            <line x1="15.25" y1="15.25" x2="20" y2="20"/>
+          </svg>
+          <input
+            id="q"
+            name="q"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Search the web"
+            value="distributed cognition"
+          />
+          <span class="enter-badge" aria-hidden="true">&#9166;</span>
+        </label>
+      </form>
+    </div>
+  </header>
+
+  <div class="filters" role="tablist" aria-label="Result filters">
+    <span class="filter active" role="tab" aria-selected="true">all</span>
+    <span class="filter" role="tab">papers</span>
+    <span class="filter" role="tab">news</span>
+    <span class="filter" role="tab">code</span>
+    <span class="filter" role="tab">last 24h</span>
+  </div>
+
+  <main class="results">
+    <div class="count">13,402 results &middot; 0.38s</div>
+
+    <a class="result" href="#" style="animation-delay: 0ms;">
+      <div class="url">arxiv.org &rsaquo; cs &rsaquo; 2024 &rsaquo; neural-topology</div>
+      <div class="title">Neural pathways and the topology of distributed cognition</div>
+      <div class="snippet">We examine how distributed neural architectures form topological structures that mirror the connective properties of biological cortices, and what that implies for mind-scale search.</div>
+    </a>
+
+    <a class="result" href="#" style="animation-delay: 30ms;">
+      <div class="url">ipfs.io &rsaquo; QmX4z... &rsaquo; cerebro-paper</div>
+      <div class="title">Cerebro: a protocol for mind-scale content addressing</div>
+      <div class="snippet">A peer-to-peer scanning protocol that treats each participating node as a signal source. Latency bounds, consistency trade-offs, and the case against centralized indexes.</div>
+    </a>
+
+    <a class="result" href="#" style="animation-delay: 60ms;">
+      <div class="url">scholar.distributed.net &rsaquo; v &rsaquo; 12 &rsaquo; p &rsaquo; 44</div>
+      <div class="title">Signal and noise in large-scale distributed retrieval</div>
+      <div class="snippet">A review of ranking strategies that remain stable when the index surface is constantly shifting. Includes a comparison of gossip-based and structured overlays.</div>
+    </a>
+
+    <a class="result" href="#" style="animation-delay: 90ms;">
+      <div class="url">web.stanford.edu &rsaquo; ~pnl &rsaquo; notes</div>
+      <div class="title">Lecture notes &mdash; the mind as network: from James to modern graph models</div>
+      <div class="snippet">Historical through-line from William James&rsquo; &ldquo;stream of consciousness&rdquo; to the modern framing of cognition as a graph traversal problem. PDF, 84 pages.</div>
+    </a>
+
+    <a class="result" href="#" style="animation-delay: 120ms;">
+      <div class="url">github.com &rsaquo; cerebro-net &rsaquo; cerebro</div>
+      <div class="title">cerebro-net/cerebro &mdash; a distributed search engine</div>
+      <div class="snippet">Reference implementation. Rust. Nodes register by hashing a locality descriptor into a Kademlia-style DHT; queries fan out along signal-strength gradients.</div>
+    </a>
+
+    <a class="result" href="#" style="animation-delay: 150ms;">
+      <div class="url">news.ycombinator.com &rsaquo; item &rsaquo; 41872214</div>
+      <div class="title">Show HN: Cerebro</div>
+      <div class="snippet">&ldquo;This is the first search UI in a decade that feels like an instrument instead of a portal.&rdquo; Discussion of the scanning metaphor, fallback behavior, and the choice to omit ads.</div>
+    </a>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

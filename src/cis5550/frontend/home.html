@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>try{if(localStorage.getItem('cerebro-theme')==='light')document.documentElement.classList.add('light');}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerebro</title>
+<link rel="icon" href="cerebro-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px;max-width:580px}
+.chips .chips-label{width:100%;text-align:center;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--fg-4,#5B6478);margin-bottom:3px}
+.chips .chip{font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid rgba(124,198,255,.22);color:var(--fg-2,#B6BECE);text-decoration:none;background:rgba(124,198,255,.04);transition:all .15s ease;white-space:nowrap}
+.chips .chip:hover{border-color:rgba(124,198,255,.55);color:var(--fg-1,#E8ECF5);background:rgba(124,198,255,.10)}
+</style>
+</head>
+<body class="home-body">
+  <main class="stage">
+    <div class="ambient" aria-hidden="true">
+      <svg viewBox="0 0 720 720" width="720" height="720" fill="none">
+        <g stroke="var(--signal)" stroke-width="1" fill="none">
+          <circle cx="360" cy="360" r="140" opacity="0.18"/>
+          <circle cx="360" cy="360" r="220" opacity="0.12"/>
+          <circle cx="360" cy="360" r="310" opacity="0.08"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="home">
+      <div class="logo-lockup">
+        <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <g stroke="var(--signal)" stroke-width="1.25" fill="none">
+            <circle cx="32" cy="32" r="22" opacity="0.25"/>
+            <circle cx="32" cy="32" r="15" opacity="0.5"/>
+            <circle cx="32" cy="32" r="8" opacity="0.85"/>
+          </g>
+          <circle cx="32" cy="32" r="2.5" fill="var(--signal)"/>
+          <g stroke="var(--signal)" stroke-width="1.25" stroke-linecap="round" opacity="0.6">
+            <line x1="32" y1="6" x2="32" y2="10"/>
+            <line x1="32" y1="54" x2="32" y2="58"/>
+            <line x1="6" y1="32" x2="10" y2="32"/>
+            <line x1="54" y1="32" x2="58" y2="32"/>
+          </g>
+        </svg>
+        <span class="wordmark">Cerebro</span>
+      </div>
+
+      <div class="tagline">Search the web.</div>
+
+      <form class="home-form" action="/search" method="GET" autocomplete="off" style="position:relative">
+        <label class="search" id="searchBox" for="q">
+          <svg class="icon-search" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5"/>
+            <line x1="15.25" y1="15.25" x2="20" y2="20"/>
+          </svg>
+          <input
+            id="q"
+            name="q"
+            type="text"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Search the web"
+            required
+            autofocus
+          />
+          <span class="enter-badge" aria-hidden="true">&#9166;</span>
+        </label>
+        <button type="submit" class="sr-only">search</button>
+        <div class="suggest-box" id="suggestBox" role="listbox"></div>
+      </form>
+
+      <div class="chips">
+        <span class="chips-label">Try a search</span>
+        <a class="chip" href="/search?q=wikipedia">wikipedia</a>
+        <a class="chip" href="/search?q=computer+science">computer science</a>
+        <a class="chip" href="/search?q=music">music</a>
+        <a class="chip" href="/search?q=history">history</a>
+        <a class="chip" href="/search?q=science">science</a>
+        <a class="chip" href="/search?q=geography">geography</a>
+        <a class="chip" href="/search?q=technology">technology</a>
+        <a class="chip" href="/search?q=internet">internet</a>
+      </div>
+
+      <div class="status" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Ready</span>
+      </div>
+    </div>
+  </main>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle light/dark">&#9680;</button>
+  <script>
+  (function(){var b=document.getElementById('themeToggle');if(!b)return;
+   b.addEventListener('click',function(){var lt=document.documentElement.classList.toggle('light');
+     try{localStorage.setItem('cerebro-theme',lt?'light':'dark');}catch(e){}});})();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

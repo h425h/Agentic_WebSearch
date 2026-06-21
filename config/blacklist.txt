@@ -1,0 +1,235 @@
+# =============================================================================
+# Cerebro Crawler Blacklist
+# =============================================================================
+# Wildcard syntax: * matches any sequence of characters
+# Each pattern is matched against the FULL normalized URL (protocol://host:port/path)
+# Lines starting with # are comments. Blank lines are ignored.
+# =============================================================================
+
+# === Binary / Image Files ===
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.bmp
+*.svg
+*.ico
+*.webp
+*.tiff
+*.tif
+*.avif
+*.heic
+*.heif
+*.jfif
+
+# === Document / Archive Files ===
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.odt
+*.ods
+*.odp
+*.rtf
+*.eps
+*.ps
+
+# === Audio Files ===
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+*.wma
+*.m4a
+*.opus
+
+# === Video Files ===
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.mpg
+*.mpeg
+*.3gp
+
+# === Compressed Archives ===
+*.zip
+*.tar
+*.gz
+*.bz2
+*.7z
+*.rar
+*.xz
+*.tgz
+*.tar.gz
+
+# === Executable / Binary ===
+*.exe
+*.msi
+*.dmg
+*.deb
+*.rpm
+*.apk
+*.ipa
+*.bin
+*.iso
+*.img
+
+# === Font Files ===
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.eot
+
+# === Data / Config Files ===
+*.json
+*.xml
+*.csv
+*.tsv
+*.yaml
+*.yml
+*.sql
+*.db
+*.sqlite
+*.rdf
+*.rss
+*.atom
+
+# === Code / Source / Asset Files ===
+*.js
+*.css
+*.map
+*.min.js
+*.min.css
+*.ts
+*.jsx
+*.tsx
+*.wasm
+
+# === Other Non-HTML Resources ===
+*.swf
+*.class
+*.jar
+*.war
+*.dll
+*.so
+*.dylib
+*.pyc
+*.o
+*.a
+*.lib
+
+# === Social Media Domains (infinite/JS-heavy content) ===
+*://www.facebook.com/*
+*://facebook.com/*
+*://www.instagram.com/*
+*://instagram.com/*
+*://twitter.com/*
+*://x.com/*
+*://www.tiktok.com/*
+*://tiktok.com/*
+*://www.snapchat.com/*
+*://www.pinterest.com/*
+*://pinterest.com/*
+*://www.linkedin.com/*
+*://linkedin.com/*
+*://www.reddit.com/*
+*://reddit.com/*
+*://www.threads.net/*
+
+# === Video / Streaming Platforms ===
+*://www.youtube.com/*
+*://youtube.com/*
+*://youtu.be/*
+*://www.twitch.tv/*
+*://www.netflix.com/*
+*://www.hulu.com/*
+*://www.disneyplus.com/*
+*://www.dailymotion.com/*
+*://vimeo.com/*
+
+# === Search Engines (avoid crawling other crawlers) ===
+*://www.google.com/search*
+*://google.com/search*
+*://www.bing.com/search*
+*://search.yahoo.com/*
+*://duckduckgo.com/*
+*://www.baidu.com/*
+*://yandex.com/*
+
+# === E-commerce (massive, JS-heavy, session-based) ===
+*://www.amazon.com/*
+*://amazon.com/*
+*://www.ebay.com/*
+*://www.walmart.com/*
+*://www.aliexpress.com/*
+*://www.alibaba.com/*
+
+# === User-Generated / Infinite Scroll ===
+*://www.quora.com/*
+*://medium.com/*
+
+# === Cloud / CDN / API (not crawlable content) ===
+*://s3.amazonaws.com/*
+*://storage.googleapis.com/*
+*://cdn.*
+*://*.cloudfront.net/*
+*://*.akamaihd.net/*
+*://api.*
+
+# === Login / Auth / Account Pages (no useful public content) ===
+*/login*
+*/signin*
+*/signup*
+*/register*
+*/logout*
+*/account*
+*/auth/*
+*/oauth/*
+*/sso/*
+
+# === Traps / Infinite URL Spaces ===
+*/calendar?*
+*/calendar/*date=*
+*?sort=*
+*?order=*
+*?page=*&page=*
+*?sessionid=*
+*?sid=*
+*?PHPSESSID=*
+*?jsessionid=*
+*&utm_*
+*?ref=*
+*?tracking=*
+*/print/*
+*/print?*
+*?action=edit*
+*?action=history*
+*?oldid=*
+*?diff=*
+
+# === Non-HTTP Schemes ===
+*mailto:*
+*tel:*
+*javascript:*
+*data:*
+*ftp://*
+
+# === Ads / Tracking ===
+*://ad.*
+*://ads.*
+*://adserver.*
+*://doubleclick.net/*
+*://googleadservices.com/*
+*://googlesyndication.com/*
+*://analytics.*
+*://tracking.*
